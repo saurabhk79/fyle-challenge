@@ -10,4 +10,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #0275d8;
+}
+
+.fyle-card {
+    width: 340px;
+    box-shadow: 4px 4px 8px #000000a9;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.pop-over {
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+input, select{
+    margin-bottom: 16px;
 }
