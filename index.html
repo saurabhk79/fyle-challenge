@@ -16,7 +16,7 @@
   <body>
     <div class="fyle-card">
       <h4>Everything in Lakhs!!</h4>
-      <form class="needs-validation" novalidate id="submit">
+      <form id="submit">
         <div>
           <label class="form-label" for="gross-income"
             >Enter gross annual income </label
@@ -24,11 +24,12 @@
             class="pop-over"
             data-bs-toggle="popover"
             data-bs-placement="top"
-            data-bs-content="And here's some amazing content. It's very engaging. Right?"
+            data-bs-content="Gross annual income is your total salary in a year before any deductions."
             >?</span
           >
+          <input type="text" class="form-control" required id="gross-income" />
+          <span id="invalid-msg1"></span>
         </div>
-        <input type="text" class="form-control" value="" required id="gross-income" />
 
         <div>
           <label class="form-label" for="extra-income"
@@ -37,12 +38,13 @@
             class="pop-over"
             data-bs-toggle="popover"
             data-bs-placement="top"
-            data-bs-content="And here's some amazing content. It's very engaging. Right?"
+            data-bs-content="Extra income is extra money earned in a year before any deductions."
           >
             ?
           </span>
+          <input type="text" class="form-control" required id="extra-income" />
+          <span id="invalid-msg2"></span>
         </div>
-        <input type="text" class="form-control" value="" required id="extra-income" />
 
         <div>
           <label class="form-label" for="age-group">Enter age group </label
@@ -50,16 +52,16 @@
             class="pop-over"
             data-bs-toggle="popover"
             data-bs-placement="top"
-            data-bs-content="And here's some amazing content. It's very engaging. Right?"
+            data-bs-content="Select your age group, your age group will have different taxes rate"
             >?</span
           >
+          <select name="age-group" id="age-group" class="form-select" required>
+            <option disabled selected>Enter your age group here</option>
+            <option value="A">age &lt; 40</option>
+            <option value="B">age &ge; 40 and age &lt; 60</option>
+            <option value="C">age &ge; 60</option>
+          </select>
         </div>
-        <select name="age-group" id="age-group" class="form-select" required>
-          <option disabled selected>Enter your age group here</option>
-          <option value="A">age &lt; 40</option>
-          <option value="B">age &ge; 40 and age &lt; 60</option>
-          <option value="C">age &ge; 60</option>
-        </select>
 
         <div>
           <label class="form-label" for="deduction"
@@ -68,22 +70,24 @@
             class="pop-over"
             data-bs-toggle="popover"
             data-bs-placement="top"
-            data-bs-content="And here's some amazing content. It's very engaging. Right?"
+            data-bs-content="And here's some amazing content. It's very engaging. Right? <h1>hello</h1>"
             >?</span
           >
+          <input type="text" class="form-control" required id="deduction" />
+          <span id="invalid-msg3"></span>
         </div>
-        <input type="text" class="form-control" value="" required id="deduction" />
 
         <button
           class="w-100 btn btn-primary my-4"
-          type="button"
-          data-bs-toggle="modal"
+          id="modalBtn"
+          type="submit"
           data-bs-target="#exampleModal"
         >
-          Submit
+          Is it OK??
         </button>
       </form>
     </div>
+    <!-- data-bs-toggle="modal" -->
 
     <div
       class="modal fade"
@@ -96,11 +100,11 @@
         <div class="modal-content">
           <div class="modal-body text-center mt-5 pt-5">
             <h1>Your overall income will be</h1>
-            <h5 id="total-income" class="color-primary"></h5>
+            <h5 id="total-income" class="text-primary"></h5>
             <h3>after tax deduction.</h3>
             <button
               type="button"
-              class="btn btn-primary mb-5"
+              class="btn btn-primary mb-5 w-100 mt-4"
               data-bs-dismiss="modal"
             >
               Close
